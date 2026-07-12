@@ -48,7 +48,7 @@ export default function About() {
             <div className="relative w-72 h-[350px] sm:w-80 sm:h-[390px]">
               {/* The Photo Container */}
               <div className="w-full h-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 p-2.5 backdrop-blur-sm">
-                <div className="relative w-full h-full rounded-xl overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                <div className="relative w-full h-full rounded-xl overflow-hidden md:grayscale md:group-hover:grayscale-0 transition-all duration-700">
                   <Image
                     src="/images/profile.png"
                     alt="Rassel A Sadat"
@@ -79,7 +79,7 @@ export default function About() {
                 Hi, I'm Rassel A Sadat
               </h3>
               <p className="text-base sm:text-lg leading-relaxed font-light text-zinc-400">
-                I am a curious and detail-oriented Computer Science graduate student with a strong focus on Data Intelligence, Artificial Intelligence, and data-driven problem solving. I enjoy collecting, organizing, and transforming raw information into structured data that powers intelligent applications.
+                I am a curious and detail-oriented Computer Science post graduate student with a strong focus on Data Intelligence, Artificial Intelligence, and data-driven problem solving. I enjoy collecting, organizing, and transforming raw information into structured data that powers intelligent applications.
               </p>
               <p className="text-base leading-relaxed font-light text-zinc-400">
                 My technical journey involves building robust backends with Node.js and Express, configuring RESTful APIs, working with MongoDB, and designing machine learning models using Python. I take pride in building structured, modular architectures that are both efficient and easy to scale.

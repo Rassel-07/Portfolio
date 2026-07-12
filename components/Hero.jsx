@@ -156,7 +156,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Down Prompt */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-70 hover:opacity-100 transition-opacity" onClick={() => handleScrollTo("about")}>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer opacity-70 hover:opacity-100 transition-opacity" onClick={() => handleScrollTo("about")}>
         <span className="text-[10px] tracking-[0.25em] font-mono text-zinc-500 uppercase">Scroll Down</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
