@@ -16,7 +16,6 @@ const skills = [
   { name: "VS Code", color: "#007ACC" },
   { name: "Figma", color: "#F24E1E" },
   { name: "Machine Learning", color: "#FF6F00" },
-  { name: "Random Forest", color: "#4CAF50" },
   { name: "Data Collection", color: "#00BCD4" },
   { name: "Data Cleaning", color: "#009688" },
   { name: "RESTful APIs", color: "#E91E63" },
@@ -27,6 +26,16 @@ const skills = [
 export default function IconCloud() {
   const canvasRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  useEffect(() => {
+    const checkViewport = () => {
+      setIsMobileOrTablet(window.innerWidth < 1024);
+    };
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+    return () => window.removeEventListener("resize", checkViewport);
+  }, []);
   const [isHovering, setIsHovering] = useState(false);
   const animationFrameRef = useRef(null);
 
@@ -211,8 +220,8 @@ export default function IconCloud() {
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
-        className="w-full h-full cursor-grab active:cursor-grabbing"
-        style={{ touchAction: "none" }}
+        className="w-full h-full cursor-grab active:cursor-grabbing pointer-events-none lg:pointer-events-auto"
+        style={{ touchAction: isMobileOrTablet ? "auto" : "none" }}
       />
     </div>
   );

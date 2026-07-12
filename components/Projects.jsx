@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, ArrowRight, ExternalLink, X, ShieldAlert, Newspaper, Cpu, CheckCircle } from "lucide-react";
 import BorderBeam from "./ui/BorderBeam";
@@ -63,6 +63,20 @@ const projectsData = [
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    if (selectedProject) {
+      // Prevent background scrolling on mobile and tablet viewports
+      if (window.innerWidth < 1024) {
+        document.body.style.overflow = "hidden";
+      }
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedProject]);
 
   return (
     <section id="projects" className="min-h-screen w-full py-28 px-4 sm:px-6 md:px-12 bg-zinc-950 flex items-center justify-center relative">
