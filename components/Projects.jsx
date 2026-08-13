@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, ArrowRight, ExternalLink, X, ShieldAlert, Newspaper, Cpu, CheckCircle } from "lucide-react";
+import { Briefcase, ArrowRight, ExternalLink, X, ShieldAlert, Newspaper, Cpu, CheckCircle, FileCheck } from "lucide-react";
 import BorderBeam from "./ui/BorderBeam";
 
 const Github = (props) => (
@@ -21,6 +21,26 @@ const Github = (props) => (
 
 
 const projectsData = [
+  {
+    id: "doccheck",
+    title: "DocCheck — AI Document Extraction",
+    subtitle: "Automated Financial Parsing & Confidence Verification",
+    category: "AI & Full-Stack",
+    period: "2026",
+    logo: <FileCheck className="w-8 h-8 text-teal-400" />,
+    shortDesc: "An AI document extraction agent built with FastAPI, React, SQLite, and Gemini 2.5 Flash that parses messy invoices/receipts into structured JSON and flags low-confidence fields for human review.",
+    techs: ["Python", "FastAPI", "React.js", "Vite", "Gemini 2.5 Flash", "SQLite", "Tailwind CSS", "REST APIs"],
+    stats: { name: "Confidence Engine", value: "Field-Level" },
+    github: "https://github.com/Rassel-07/DocCheck",
+    liveUrl: "https://doc-check-orpin.vercel.app",
+    architecture: `Document Upload (PDF/Image) ➔ FastAPI Service ➔ Gemini 2.5 Flash Structured JSON Extraction ➔ Field Confidence Scoring ➔ SQLite Persistence ➔ React Human-in-the-Loop Audit UI`,
+    highlights: [
+      "Engineered an end-to-end multimodal document parsing engine leveraging Gemini 2.5 Flash structured output.",
+      "Implemented automated field-level confidence scoring (0.0 – 1.0) for vendor, date, line items, tax, and total fields.",
+      "Designed a lightweight SQLite persistence layer recording raw file metadata, extraction histories, and audit logs.",
+      "Built an intuitive React + Vite frontend dashboard displaying visual field confidence indicators and human-in-the-loop validation tools."
+    ]
+  },
   {
     id: "digital-twin",
     title: "AI-Powered Digital Twin Framework",
@@ -241,6 +261,17 @@ export default function Projects() {
 
               {/* Action Buttons */}
               <div className="px-6 py-4 bg-zinc-900 border-t border-zinc-800 flex items-center justify-end gap-3">
+                {selectedProject.liveUrl && (
+                  <a
+                    href={selectedProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider text-zinc-950 bg-teal-400 hover:bg-teal-300 transition-all hover:scale-105"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    LIVE DEMO
+                  </a>
+                )}
                 <a
                   href={selectedProject.github}
                   target="_blank"
