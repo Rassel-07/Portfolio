@@ -71,7 +71,7 @@ const projectsData = [
     techs: ["React 18", "Node.js", "Express", "REST APIs", "Vanilla CSS", "JWT Auth"],
     stats: { name: "Feature", value: "Story Clustering" },
     github: "https://github.com/Rassel-07/News-Aggregator",
-    liveUrl: "https://news-aggregator-psi-rouge.vercel.app",
+    liveUrl: "https://news-aggregator-brown-delta.vercel.app/",
     architecture: `RSS/Atom Ingestion ➔ Jaccard Similarity Clustering ➔ Heuristic Personalization ➔ Backend API ➔ React 18 UI`,
     highlights: [
       "Engineered a personalized ranking engine incorporating exponential freshness decay and user topic preferences.",
@@ -105,7 +105,7 @@ export default function Projects() {
       <div className="absolute bottom-[10%] left-[5%] w-80 h-80 rounded-full bg-teal-500/5 blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-6xl w-full flex flex-col gap-16">
-        
+
         {/* Section Header */}
         <div className="flex flex-col items-center md:items-start gap-3">
           <div className="flex items-center gap-2 text-teal-400 font-mono text-xs tracking-[0.2em] uppercase">
@@ -178,7 +178,7 @@ export default function Projects() {
       <AnimatePresence>
         {selectedProject && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            
+
             {/* Modal Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -217,7 +217,7 @@ export default function Projects() {
 
               {/* Scrollable Content */}
               <div className="p-6 overflow-y-auto max-h-[70vh] flex flex-col gap-6 text-sm text-zinc-400 font-light">
-                
+
                 {/* Overview */}
                 <div className="flex flex-col gap-2">
                   <h4 className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Overview</h4>
