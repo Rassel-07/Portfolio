@@ -68,14 +68,15 @@ const projectsData = [
     period: "2026",
     logo: <Newspaper className="w-8 h-8 text-indigo-400" />,
     shortDesc: "A personalized news discovery platform aggregating legitimate journalism with multi-source perspective comparison, story clustering, and 24-hour inactivity session management.",
-    techs: ["React 18", "Node.js", "Express", "MongoDB", "Vanilla CSS", "JWT Auth"],
+    techs: ["React 18", "Node.js", "Express", "REST APIs", "Vanilla CSS", "JWT Auth"],
     stats: { name: "Feature", value: "Story Clustering" },
     github: "https://github.com/Rassel-07/News-Aggregator",
-    architecture: `RSS/Atom Ingestion ➔ Jaccard Similarity Clustering ➔ Heuristic Personalization ➔ MongoDB ➔ React 18 UI`,
+    liveUrl: "https://news-aggregator-psi-rouge.vercel.app",
+    architecture: `RSS/Atom Ingestion ➔ Jaccard Similarity Clustering ➔ Heuristic Personalization ➔ Backend API ➔ React 18 UI`,
     highlights: [
       "Engineered a personalized ranking engine incorporating exponential freshness decay and user topic preferences.",
       "Implemented story clustering and deduplication using Jaccard token similarity to group multi-source coverage.",
-      "Developed a 24-hour inactivity automatic logout system with throttled MongoDB session updates.",
+      "Developed a 24-hour inactivity automatic logout system with throttled secure backend session updates.",
       "Designed a custom editorial design system in Vanilla CSS with dark/light themes and skeleton loaders."
     ]
   }
