@@ -62,21 +62,21 @@ const projectsData = [
   },
   {
     id: "news-aggregator",
-    title: "News Aggregator Platform",
-    subtitle: "Real-time Multi-source RSS Content Delivery",
+    title: "AuraNews — Intelligent News Discovery",
+    subtitle: "Personalized Discovery & Editorial Aggregation Platform",
     category: "Full-Stack Web Dev",
-    period: "2024",
+    period: "2026",
     logo: <Newspaper className="w-8 h-8 text-indigo-400" />,
-    shortDesc: "A robust MERN stack application collecting, filtering, categorizing, and delivering news feeds from multiple sources in real time using RESTful APIs.",
-    techs: ["MongoDB", "Express.js", "React.js", "Node.js", "REST APIs", "Data Sanitization"],
-    stats: { name: "API Response", value: "<150ms" },
-    github: "https://github.com/Rassel-07",
-    architecture: `External APIs ➔ Node/Express RSS Ingestion ➔ Sanitization & MongoDB Storage ➔ Express Controllers ➔ React Dashboard UI`,
+    shortDesc: "A personalized news discovery platform aggregating legitimate journalism with multi-source perspective comparison, story clustering, and 24-hour inactivity session management.",
+    techs: ["React 18", "Node.js", "Express", "MongoDB", "Vanilla CSS", "JWT Auth"],
+    stats: { name: "Feature", value: "Story Clustering" },
+    github: "https://github.com/Rassel-07/News-Aggregator",
+    architecture: `RSS/Atom Ingestion ➔ Jaccard Similarity Clustering ➔ Heuristic Personalization ➔ MongoDB ➔ React 18 UI`,
     highlights: [
-      "Developed secure backend API services to ingest, validate, and sanitize incoming raw RSS feeds.",
-      "Implemented intelligent server-side search algorithms and data categorizations.",
-      "Designed a responsive React client utilizing optimized state management and API pagination.",
-      "Engineered indexing schemas in MongoDB to optimize queries and support rapid document retrievals."
+      "Engineered a personalized ranking engine incorporating exponential freshness decay and user topic preferences.",
+      "Implemented story clustering and deduplication using Jaccard token similarity to group multi-source coverage.",
+      "Developed a 24-hour inactivity automatic logout system with throttled MongoDB session updates.",
+      "Designed a custom editorial design system in Vanilla CSS with dark/light themes and skeleton loaders."
     ]
   }
 ];
