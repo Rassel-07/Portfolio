@@ -54,7 +54,7 @@ export default function CustomCursor() {
       document.removeEventListener("mouseenter", handleMouseEnter);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [isVisible]);
+  }, [isVisible, cursorX, cursorY]);
 
   if (!isVisible) return null;
 

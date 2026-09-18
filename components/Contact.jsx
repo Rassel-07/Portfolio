@@ -1,51 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Mail, Phone, MapPin, CheckCircle, Terminal } from "lucide-react";
+import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import ShineBorder from "./ui/ShineBorder";
-
-const Github = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={props.className}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const Linkedin = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={props.className}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
+import { Github, Linkedin } from "./ui/Icons";
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", message: "", honeypot: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formState.honeypot) {
+      // Silent rejection for automated bot submissions
+      return;
+    }
     if (!formState.name || !formState.email || !formState.message) return;
 
     setIsSubmitting(true);
+    setErrorMessage("");
 
     try {
       const response = await fetch("https://formsubmit.co/ajax/razelsadat@gmail.com", {
@@ -58,23 +33,25 @@ export default function Contact() {
           name: formState.name,
           email: formState.email,
           message: formState.message,
-          _subject: `New Portfolio Message from ${formState.name}`
+          _subject: `New Portfolio Message from ${formState.name}`,
+          _honey: formState.honeypot
         })
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
-        setFormState({ name: "", email: "", message: "" });
+        setFormState({ name: "", email: "", message: "", honeypot: "" });
       } else {
-        alert("Failed to send message. Please try emailing directly to razelsadat@gmail.com");
+        setErrorMessage("Failed to transmit message. Please try emailing directly to razelsadat@gmail.com");
       }
     } catch (error) {
       console.error(error);
-      alert("An error occurred. Please try emailing directly to razelsadat@gmail.com");
+      setErrorMessage("Network error occurred. Please reach out directly to razelsadat@gmail.com");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
 
   return (
@@ -104,10 +81,10 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col justify-between gap-8">
             <div className="flex flex-col gap-6">
               <h3 className="text-2xl font-bold text-white tracking-tight">
-                Let's talk data!
+                Let&apos;s talk data!
               </h3>
               <p className="text-sm font-light text-zinc-400 leading-relaxed max-w-sm">
-                Curious? Let's connect and chat about AI, Data & Technologies!
+                Curious? Let&apos;s connect and chat about AI, Data &amp; Technologies!
               </p>
             </div>
 
@@ -179,6 +156,25 @@ export default function Contact() {
                   onSubmit={handleSubmit}
                   className="flex flex-col gap-5 text-sm"
                 >
+                  {/* Anti-spam honeypot input hidden from humans */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    value={formState.honeypot}
+                    onChange={(e) => setFormState({ ...formState, honeypot: e.target.value })}
+                    className="hidden"
+                    style={{ display: "none" }}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+
+                  {errorMessage && (
+                    <div className="p-3 rounded-lg border border-red-500/30 bg-red-950/30 text-red-400 text-xs flex items-center gap-2 font-mono">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="name" className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Your Name</label>

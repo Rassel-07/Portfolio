@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Terminal as TerminalIcon, FileText, ArrowDown, Cpu, Sparkles } from "lucide-react";
+import { Terminal as TerminalIcon, FileText, ArrowDown, Cpu } from "lucide-react";
 
 export default function Hero() {
   const [typedName, setTypedName] = useState("Rassel");
@@ -64,14 +64,6 @@ export default function Hero() {
           animate="visible"
           className="lg:col-span-7 flex flex-col gap-6 text-left"
         >
-          {/* <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-950/30 text-teal-400 text-xs font-mono font-medium tracking-wider w-fit"
-          >
-            <Sparkles className="w-3.5 h-3.5 animate-spin-gradient-slow" />
-            <span>PORTFOLIO 2026</span>
-          </motion.div> */}
-
           <motion.h1
             variants={itemVariants}
             className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none text-white animate-once"

@@ -76,7 +76,7 @@ export default function About() {
               className="flex flex-col gap-4"
             >
               <h3 className="text-2xl font-bold text-white tracking-tight">
-                Hi, I'm Rassel A Sadat
+                Hi, I&apos;m Rassel A Sadat
               </h3>
               <p className="text-base sm:text-lg leading-relaxed font-light text-zinc-400">
                 I am a curious and detail-oriented Computer Science post graduate student with a strong focus on Data Intelligence, Artificial Intelligence, and data-driven problem solving. I enjoy collecting, organizing, and transforming raw information into structured data that powers intelligent applications.
