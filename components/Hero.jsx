@@ -133,7 +133,7 @@ export default function Hero() {
                 <div>[2/3] Mapping core engineering skills...</div>
                 <div className="text-indigo-400/90">&bull; Python, ML, Node.js</div>
                 <div>[3/3] Scanning active repositories...</div>
-                <div className="text-cyan-400/90">&bull; News Aggregator | AI Digital Twin</div>
+                <div className="text-cyan-400/90">&bull; DocCheck | Agentic Survey | AuraNews</div>
               </div>
 
               <div className="text-emerald-400 font-semibold mt-1">✓ Setup complete! Rassel is ready.</div>

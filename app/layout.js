@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Rassel A Sadat | AI/ML & Software Developer Portfolio",
   description: "Explore the professional engineering portfolio of Rassel A Sadat, an Integrated M.Tech Computer Science graduate specializing in AI/ML models, data intelligence pipelines, and full-stack modular backend architectures.",
-  keywords: ["Rassel A Sadat", "Software Developer", "AI Developer", "Machine Learning", "Digital Twin", "VIT-AP University", "Portfolio"],
+  keywords: ["Rassel A Sadat", "Software Developer", "AI Developer", "Machine Learning", "Agentic AI", "AI Safety", "VIT-AP University", "Portfolio"],
 };
 
 export default function RootLayout({ children }) {

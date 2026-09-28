@@ -24,7 +24,7 @@ const experienceData = [
     icon: <GraduationCap className="w-5 h-5 text-indigo-400" />,
     points: [
       "Pursuing M.Tech in CSE with a current CGPA of 8.73, focusing on AI/ML, data preprocessing, and modular backend systems.",
-      "Developed research projects like the AI Personalized Drug Response framework and MERN News Aggregator.",
+      "Developed research projects like the Agentic Hallucination Survey framework and MERN News Aggregator.",
       "Mastered core concepts: Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, and Software Development Lifecycle."
     ]
   }

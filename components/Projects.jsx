@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, ArrowRight, ExternalLink, X, Newspaper, Cpu, CheckCircle, FileCheck } from "lucide-react";
+import { Briefcase, ArrowRight, ExternalLink, X, Newspaper, ShieldCheck, CheckCircle, FileCheck } from "lucide-react";
 import BorderBeam from "./ui/BorderBeam";
 import { Github } from "./ui/Icons";
-
 
 const projectsData = [
   {
@@ -28,22 +27,23 @@ const projectsData = [
     ]
   },
   {
-    id: "digital-twin",
-    title: "AI-Powered Digital Twin Framework",
-    subtitle: "Personalized Drug Response Simulation",
-    category: "AI / Machine Learning",
-    period: "2025",
-    logo: <Cpu className="w-8 h-8 text-teal-400" />,
-    shortDesc: "A machine learning digital twin framework simulating patient-specific clinical drug efficacy using Random Forest models, achieving an ROC-AUC of 0.96.",
-    techs: ["Python", "Random Forest", "Data Processing", "Pandas", "Scikit-Learn", "Model Evaluation"],
-    stats: { name: "ROC-AUC Score", value: "0.96" },
-    github: "https://github.com/Rassel-07",
-    architecture: `Clinical Data Preprocessing ➔ Feature Engineering ➔ Random Forest Regressor/Classifier ➔ ROC-AUC Evaluation ➔ Visualized Response Insights`,
+    id: "agentic-hallucination-survey",
+    title: "5in1 Hotel Agent — Hallucination Survey",
+    subtitle: "Neurosymbolic Safety & Grounding Architecture for LLM Agents",
+    category: "AI & Agentic Systems",
+    period: "2026",
+    logo: <ShieldCheck className="w-8 h-8 text-cyan-400" />,
+    shortDesc: "A research capstone and interactive framework coupling Qwen3 (8B 4-bit) with a 5-layer neurosymbolic defense pipeline (Graph-RAG, ToolGate, Multi-Agent Validation, Guardrails, and Steering Retries) on 119k+ booking records to mitigate LLM hallucinations.",
+    techs: ["Python", "FastAPI", "Qwen3 8B", "PyTorch", "Graph-RAG", "NetworkX", "SQLite", "Next.js", "TypeScript", "Cloudflare"],
+    stats: { name: "Defense Layers", value: "5-Tier Neurosymbolic" },
+    github: "https://github.com/Rassel-07/Agentic-Hallucination-Survey",
+    architecture: `User Query ➔ Intent Classification ➔ Graph-RAG (22 Fact Triples) ➔ ToolGate SQLite Execution ➔ Dual Qwen3 Judges (Factuality & Scope) ➔ Deterministic Guardrails ➔ Steering Feedback Loop`,
     highlights: [
-      "Designed and trained Random Forest models to predict specific patient clinical drug tolerances.",
-      "Conducted extensive data collection, cleaning, and preprocessing of raw multi-dimensional medical parameters.",
-      "Achieved a verified ROC-AUC of 0.96, validating high predictive model accuracy.",
-      "Engineered clean pipelines for feature selection and data normalization to reduce training bias."
+      "Architected a 5-layer neurosymbolic defense framework coupling Qwen3 (8B 4-bit) with deterministic guardrails to prevent agent hallucination.",
+      "Implemented Graph-RAG over 22 NetworkX knowledge graph fact triples indexed via 384-dimensional lexical n-gram embeddings.",
+      "Engineered ToolGate with intent-gated SQLite execution across 119,390 Kaggle hotel booking records to eliminate tool misuse.",
+      "Deployed dual Qwen3 multi-agent validation judges (Factuality & Scope) with self-correcting steering retry loops.",
+      "Built an interactive Next.js + TypeScript comparative evaluation dashboard with live Colab GPU Cloudflare tunnel integration."
     ]
   },
   {

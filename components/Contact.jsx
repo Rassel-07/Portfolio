@@ -52,8 +52,6 @@ export default function Contact() {
     }
   };
 
-
-
   return (
     <section id="contact" className="min-h-screen w-full pt-28 pb-12 px-4 sm:px-6 md:px-12 bg-zinc-950 flex items-center justify-center relative">
 

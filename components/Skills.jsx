@@ -17,8 +17,8 @@ const skillCategories = [
       "Data Preprocessing",
       "Data Collection & Cleaning",
       "Machine Learning",
-      "Random Forest Models",
-      "Model Evaluation (ROC-AUC)"
+      "Agentic AI & Graph-RAG",
+      "Model Evaluation & Guardrails"
     ]
   },
   {
